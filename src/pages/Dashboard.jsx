@@ -185,7 +185,7 @@ const Dashboard = () => {
             {tabs.map((item, index) => (
               <div
                 key={index}
-                className={`tab_header px-4 py-1 text-[15px] rounded-lg mb-[4px] cursor-pointer ${
+                className={`tab_header px-4 py-1 text-xs rounded-lg mb-[4px] cursor-pointer ${
                   item.header === tab
                     ? "bg-black text-white"
                     : "bg-white border border-black text-black"
