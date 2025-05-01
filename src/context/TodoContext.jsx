@@ -50,7 +50,7 @@ const TodoContextProvider = (props) => {
 
     if (page == "SignUp") {
       if (existingUser) {
-        toast.success('User already exist')
+        toast.error('User already exist')
         console.log("User already exist");
       } else {
         const newUser = {
@@ -66,6 +66,7 @@ const TodoContextProvider = (props) => {
 
         setFormData(initialFormData);
         setPage("LogIn");
+        toast.success('Registered successfully!')
       }
     }
 
@@ -89,7 +90,7 @@ const TodoContextProvider = (props) => {
     // }
 
     if (page === "LogIn") {
-      toast.success('Logged in successfully')
+      
       const updatedUsers = JSON.parse(localStorage.getItem("users")) || [];
       const authorizedUser = updatedUsers.find(
         (user) =>
@@ -103,8 +104,9 @@ const TodoContextProvider = (props) => {
         setTask(authorizedUser.tasks);
         setFormData(initialFormData);
         navigate("/dashboard");
+        toast.success('Logged in successfully')
       } else {
-        toast.success('User not exist')
+        toast.error('User not exist')
         console.log("User not exist");
       }
     }
