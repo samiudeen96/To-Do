@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import Header from "../components/Header";
 import { TodoContext } from "../context/TodoContext";
 import notask from "../assets/notask.svg";
+import toast from "react-hot-toast";
 
 const Dashboard = () => {
   const initialFormState = {
@@ -98,6 +99,7 @@ const Dashboard = () => {
       localStorage.setItem("users", JSON.stringify(updatedUsers));
       setOpenModal(false);
       setFormData(initialFormState);
+      toast.success('Task create successfully')
     }
 
     if (formAction === "update") {
@@ -119,6 +121,7 @@ const Dashboard = () => {
       setFormData(initialFormState);
       setOpenModal(false);
       setFormAction("submit");
+      toast.success('Task updated successfully')
     }
   };
 
@@ -148,6 +151,7 @@ const Dashboard = () => {
       user.username === updatedUser.username ? updatedUser : user
     );
     localStorage.setItem("users", JSON.stringify(updatedUsers));
+    toast.success('Task deleted successfully')
   };
 
   const onCloseHandler = () => {

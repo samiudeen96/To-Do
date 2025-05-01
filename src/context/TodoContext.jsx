@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from "react";
+import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 export const TodoContext = createContext();
@@ -49,6 +50,7 @@ const TodoContextProvider = (props) => {
 
     if (page == "SignUp") {
       if (existingUser) {
+        toast.success('User already exist')
         console.log("User already exist");
       } else {
         const newUser = {
@@ -87,6 +89,7 @@ const TodoContextProvider = (props) => {
     // }
 
     if (page === "LogIn") {
+      toast.success('Logged in successfully')
       const updatedUsers = JSON.parse(localStorage.getItem("users")) || [];
       const authorizedUser = updatedUsers.find(
         (user) =>
@@ -101,6 +104,7 @@ const TodoContextProvider = (props) => {
         setFormData(initialFormData);
         navigate("/dashboard");
       } else {
+        toast.success('User not exist')
         console.log("User not exist");
       }
     }
@@ -108,6 +112,7 @@ const TodoContextProvider = (props) => {
   };
 
   const logoutHandler = () => {
+    toast.success('Logged out successfully')
     localStorage.removeItem("loggedUser");
     setTask([]);
     navigate("/");
