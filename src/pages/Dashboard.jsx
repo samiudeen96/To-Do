@@ -137,7 +137,6 @@ const Dashboard = () => {
     const updatedTasks = [...task];
     updatedTasks.splice(itemIndex, 1);
     setTask(updatedTasks);
-
     // Update loggedUser.tasks and localStorage
     const updatedUser = { ...loggedUser, tasks: updatedTasks };
     setLoggedUser(updatedUser);

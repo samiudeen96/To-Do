@@ -9,7 +9,7 @@ const TodoContextProvider = (props) => {
     name: "",
     username: "",
     password: "",
-  }
+  };
   const [formData, setFormData] = useState(initialFormData);
   const [page, setPage] = useState("LogIn");
   const [users, setUsers] = useState(
@@ -67,23 +67,44 @@ const TodoContextProvider = (props) => {
       }
     }
 
-    if (page == "LogIn") {
-      const authorizedUser = users.find(
+    // if (page == "LogIn") {
+    //   const authorizedUser = users.find(
+    //     (user) =>
+    //       user.username === formData.username &&
+    //       user.password === formData.password
+    //   );
+
+    //   if (authorizedUser) {
+    //     localStorage.setItem("loggedUser", JSON.stringify(authorizedUser));
+    //     console.log("user Task: ", authorizedUser);
+    //     setLoggedUser(authorizedUser);
+    //     setTask(authorizedUser.tasks);
+    //     setFormData(initialFormData);
+    //     navigate("/dashboard");
+    //   } else {
+    //     console.log("User not exist");
+    //   }
+    // }
+
+    if (page === "LogIn") {
+      const updatedUsers = JSON.parse(localStorage.getItem("users")) || [];
+      const authorizedUser = updatedUsers.find(
         (user) =>
           user.username === formData.username &&
           user.password === formData.password
       );
-
+    
       if (authorizedUser) {
         localStorage.setItem("loggedUser", JSON.stringify(authorizedUser));
         setLoggedUser(authorizedUser);
-        setTask(authorizedUser.tasks || []);
+        setTask(authorizedUser.tasks);
         setFormData(initialFormData);
         navigate("/dashboard");
       } else {
         console.log("User not exist");
       }
     }
+    
   };
 
   const logoutHandler = () => {
