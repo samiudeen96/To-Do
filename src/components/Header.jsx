@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import todo from "../assets/todo.svg";
 import dots from "../assets/dots.svg";
+import logout from '../assets/logout1.svg'
 
 import { TodoContext } from "../context/TodoContext";
 
@@ -38,7 +39,7 @@ const Header = () => {
             </div>
             <div>{name}</div>
           </div>
-          <div className="relative" ref={dropdownRef}>
+          {/* <div className="relative" ref={dropdownRef}>
             <img
               className="w-5 h-5 cursor-pointer"
               onClick={() => setIsOpen(!isOpen)}
@@ -50,7 +51,8 @@ const Header = () => {
                 <button onClick={logoutHandler}>Logout</button>
               </div>
             )}
-          </div>
+          </div> */}
+          <img src={logout} className="w-6 h-6 cursor-pointer" onClick={logoutHandler} alt=""/>
         </div>
       </div>
     </div>
