@@ -56,27 +56,49 @@ const Auth = () => {
             />
           </div>
 
-          <div className="flex justify-between items-center">
-            <button type="submit" className="">
+          <div className="mt-5">
+            <button type="submit" className="w-full">
               {page}
             </button>
 
-            {page == "SignUp" && (
-              <a
-                className="text-[12px] hover:underline"
-                onClick={() => onPageHandler("LogIn")}
-              >
-                LogIn
-              </a>
-            )}
-            {page == "LogIn" && (
-              <a
-                className="text-[12px] hover:underline"
-                onClick={() => onPageHandler("SignUp")}
-              >
-                SignUp
-              </a>
-            )}
+            <div className="mt-5">
+              {page == "SignUp" && (
+                // <a
+                //   className="text-[12px] hover:underline cursor-pointer"
+                //   onClick={() => onPageHandler("LogIn")}
+                // >
+                //   LogIn
+                // </a>
+                <p className="text-xs  text-center">
+                  Not a member?{" "}
+                  <span
+                    className="underline font-semibold cursor-pointer"
+                    onClick={() => onPageHandler("LogIn")}
+                  >
+                    Login
+                  </span>{" "}
+                  now
+                </p>
+              )}
+              {page == "LogIn" && (
+                // <a
+                //   className="text-[12px] hover:underline cursor-pointer"
+                //   onClick={() => onPageHandler("SignUp")}
+                // >
+                //   SignUp
+                // </a>
+                <p className="text-xs  text-center">
+                  Already have an account?{" "}
+                  <span
+                    className="underline cursor-pointer font-semibold"
+                    onClick={() => onPageHandler("SignUp")}
+                  >
+                    Signup
+                  </span>{" "}
+                  now
+                </p>
+              )}
+            </div>
           </div>
         </form>
       </div>
