@@ -69,7 +69,7 @@ const Auth = () => {
                 // >
                 //   LogIn
                 // </a>
-                <p className="text-xs  text-center">
+                <p className="text-[14px]  text-center">
                   Not a member?{" "}
                   <span
                     className="underline font-semibold cursor-pointer"
@@ -87,7 +87,7 @@ const Auth = () => {
                 // >
                 //   SignUp
                 // </a>
-                <p className="text-xs  text-center">
+                <p className="text-[14px]  text-center">
                   Already have an account?{" "}
                   <span
                     className="underline cursor-pointer font-semibold"
