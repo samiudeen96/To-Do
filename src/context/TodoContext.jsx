@@ -70,25 +70,6 @@ const TodoContextProvider = (props) => {
       }
     }
 
-    // if (page == "LogIn") {
-    //   const authorizedUser = users.find(
-    //     (user) =>
-    //       user.username === formData.username &&
-    //       user.password === formData.password
-    //   );
-
-    //   if (authorizedUser) {
-    //     localStorage.setItem("loggedUser", JSON.stringify(authorizedUser));
-    //     console.log("user Task: ", authorizedUser);
-    //     setLoggedUser(authorizedUser);
-    //     setTask(authorizedUser.tasks);
-    //     setFormData(initialFormData);
-    //     navigate("/dashboard");
-    //   } else {
-    //     console.log("User not exist");
-    //   }
-    // }
-
     if (page === "LogIn") {
       
       const updatedUsers = JSON.parse(localStorage.getItem("users")) || [];
