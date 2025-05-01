@@ -45,13 +45,13 @@ const TodoContextProvider = (props) => {
     e.preventDefault();
 
     const existingUser = users.some(
-      (user) => user.username === formData.username
+      (user) => user.username.toLowerCase() === formData.username.toLowerCase()
     );
 
     if (page == "SignUp") {
       if (existingUser) {
         toast.error('User already exist')
-        console.log("User already exist");
+        // console.log("User already exist");
       } else {
         const newUser = {
           name: formData.name,
@@ -94,7 +94,7 @@ const TodoContextProvider = (props) => {
       const updatedUsers = JSON.parse(localStorage.getItem("users")) || [];
       const authorizedUser = updatedUsers.find(
         (user) =>
-          user.username === formData.username &&
+          user.username.toLowerCase() === formData.username.toLowerCase() &&
           user.password === formData.password
       );
     
