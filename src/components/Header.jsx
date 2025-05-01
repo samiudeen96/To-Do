@@ -32,7 +32,7 @@ const Header = () => {
           <img src={todo} className="w-8 h-8 " alt="" />
           <p className="font-semibold text-lg">ToDo</p>
         </div>
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-5 items-center">
           <div className="flex gap-1 items-center" >
             <div className="bg-black w-6 h-6 text-white text-[18px] rounded-full flex justify-center items-center font-normal">
               <p>{initial}</p>
